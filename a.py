@@ -70,6 +70,8 @@ while True:
                 mode_(cmd)
             elif len(cmd) == 1:
                 mode = "MO"
+        elif cmd[0] == 'q' or cmd[0] == 'quit' or cmd[0] == 'exit':
+            exit()
         elif cmd[0] == 'help':
             print('avg [int, int, ..., int] to average')
             print('med [int, int, ..., int] to median')
@@ -80,7 +82,25 @@ while True:
             print ("help to show command ")
     if mode == 'AVG':
         try:
-            if len(cmd) != 0:
+            if cmd[0] == 'ps':
+                mode = 'PS'
+            elif len(cmd) != 0:
+                avg(cmd)
+        except:
+            print('this mode only n1, n2, n3, ..., nx')
+    if mode == 'MED':
+        try:
+            if cmd[0] == 'ps':
+                mode = 'PS'
+            elif len(cmd) != 0:
+                med(cmd)
+        except:
+            print('this mode only n1, n2, n3, ..., nx')
+    if mode == 'MO':
+        try:
+            if cmd[0] == 'ps':
+                mode = 'PS'
+            elif len(cmd) != 0:
                 avg(cmd)
         except:
             print('this mode only n1, n2, n3, ..., nx')
